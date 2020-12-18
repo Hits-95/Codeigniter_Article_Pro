@@ -1,0 +1,32 @@
+Blog Name : Codeigniter_Article_Pro
+
+	User Interface :
+		- View Article
+		- View Article in multiple forms
+
+	Admin Interface :
+		 - Login/Sing up (with gmail, facebook) with logout
+		 - Add Article
+		 - Edite Article
+		 - Delete Article
+
+	Database MySql : 
+		1) cretate table article {
+			id, article_title, article_body, user_id
+		}
+
+		2) cretate table user {
+			id, username, password, firstname, lastname
+		}
+	Technologies : 
+		- PHP Freamework Codeigniter.
+		- UI Technologies (Angular js 1.6)
+		- CSS (Bootstrap Framework)
+		- HTML & AJAX 
+
+
+all project link : 
+https://github.com/TechnicalSunejaji/CodeIgniter-Mini-Project-Tutorial-in-Hindi/blob/master/application/controllers/admin.php
+
+bootstrap 5 icons :
+https://www.w3schools.com/icons/fontawesome5_icons_design.asp
