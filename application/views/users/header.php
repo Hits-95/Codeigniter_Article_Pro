@@ -19,7 +19,7 @@
   <div class="collapse navbar-collapse" id="navb">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="btn " href="<?= base_url()?>dynamic_dependent">Ajax1</a>
+        <a class="btn " href="<?= base_url()?>dynamic_dependent">Ajax</a>
       </li>
       <li class="nav-item active">
         <a class="btn btn-light text-dark" href="<?= base_url('export'); ?>">FeedBack!!!</a>
