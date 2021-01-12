@@ -23,11 +23,11 @@
        <?php 
           if($this->session->userdata('id')){
         ?>
-          <a class="nav-link" href="<?= base_url('admin/welcome'); ?>">Article List<i class='fas fa-list' style="margin-left: 5px "></i></a>
+          <a class="nav-link" href="<?= base_url('admin/welcome'); ?>">Article List<i class='fas fa-list' style="margin-left:  "></i></a>
         <?php } ?>
     </li>
     
-    <li class="nav-item active" style="margin-left: 1400px">
+    <li class="nav-item active">
        <?php 
           if($this->session->userdata('id')){
         ?>
