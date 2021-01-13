@@ -22,6 +22,7 @@
 		<table class="table table-hover ">
 		    <thead>
 		    	<tr class="table-primary">
+		    		<th> Id </th>
 			        <th>Article Title</th>
 			        <th>Article Body</th>
 			        <th>Edit</th>
@@ -29,17 +30,19 @@
 		      	</tr>
 		    </thead>
 		    <tbody>
+		    	<?php $count = $this->uri->segment(3);?>
 		    	<?php if(count($articles)): ?>
 			    	<?php foreach($articles as $art) :?>
 				      <tr>
+				      	<td><?= ++$count ?></td>
 				        <td><strong><?= $art->article_title;?></strong></td>
 				        <td><i><?= $art->article_body;?></i></td>
-				        <td><?=  anchor("admin/edit_article/{$art->id}",'Edit',['class'=>'btn btn-primary btn-sm']); ?></td>
+				        <td><?=  anchor("admin/edit_article/{$art->id}",'Edit',['class'=>'btn btn-outline-primary btn-sm']); ?></td>
 				        <td>
 				        	<?=
 				        		form_open('admin/del_article'),
 				        		form_hidden('id', $art->id),
-				        		form_submit(['name' => 'submit', 'value' => 'Delete', 'class' => 'btn btn-danger btn-sm']),
+				        		form_submit(['name' => 'submit', 'value' => 'Delete', 'class' => 'btn btn-outline-danger btn-sm']),
 				        		form_close();
 				        	?>
 				        </td>

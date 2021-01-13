@@ -5,7 +5,7 @@
 <div class="container">
 		<h2 style="margin-top: 20px;"><?= ($action == 'update_article') ? "Edit " : "Add " ?>Article</h2>
 	
-	<?= form_open($action == 'update_article' ? "admin/update_article/{$article->id}" :  "admin/userValidation");?>
+	<?= form_open_multipart($action == 'update_article' ? "admin/update_article/{$article->id}" :  "admin/userValidation");?>
 
 	<?php echo form_hidden('user_id', $this->session->userdata('id'));?>
 		<div class="row" style="margin-top: 20px">
@@ -41,6 +41,28 @@
 			</div>
 			<div class="col-lg-6" style=" margin-top: 150px;">
 				<?php echo form_error('article_body');?>
+			</div>
+		</div>
+		<!-- end of row -->
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="form-group">
+		    		<label for="Username">Select Image:</label><br>
+		     		<?php 
+			     		if($action == 'update_article'){
+			     			echo form_upload(['name' => 'userfile']);
+			     		}else{
+			     			echo form_upload(['name' => 'userfile']);
+			       		}
+			     	?>
+		     	</div>
+			</div>
+			<div class="col-lg-6" style=" margin-top:40px;">
+				<?php 
+					if(isset($upload_error)){
+						echo $upload_error;
+				  	} 
+				?>
 			</div>
 		</div>
 		<!-- end of row -->

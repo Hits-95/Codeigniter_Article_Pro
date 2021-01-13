@@ -27,14 +27,14 @@
         <?php } ?>
     </li>
     
-    <li class="nav-item active">
+    <li class="nav-item active" style="padding-top: 5px;">
        <?php 
           if($this->session->userdata('id')){
         ?>
-            <a class="nav-link" href="<?= base_url('admin/logout')?>"><span style="margin-right: 5px">Logout</span><i class="fas fa-sign-out-alt"></i></a>
+            <a class="btn btn-danger btn-sm" href="<?= base_url('admin/logout')?>"><span style="margin-right: 5px">Logout</span><i class="fas fa-sign-out-alt"></i></a>
 
         <?php }else{ ?>
-            <a class="nav-link" href="<?= base_url('login/')?>">Login<i class="fas fa-sign-in-alt" style="margin-right: 5px"></i></a>
+            <a class="btn btn-danger btn-sm" href="<?= base_url('login/')?>">Login<i class="fas fa-sign-in-alt" style="margin-right: 5px"></i></a>
         <?php
         }
          ?>

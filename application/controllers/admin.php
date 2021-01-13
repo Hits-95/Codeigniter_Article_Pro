@@ -95,9 +95,16 @@
 
 		//check article is valid or not via config validation new tech-2
 		public function userValidation(){
-			if($this->form_validation->run('add_article_rules')){	
+			$config=[
+				'upload_path'=>'./upload/',
+				'allowed_types'=>'gif|jpg|png',
+			];
+            //load library to upload image...
+			$this->load->library('upload',$config); 
+			if($this->form_validation->run('add_article_rules') && $this->upload->do_upload() ){	
 				//get all data from add_article.php as post in form of array tech-2
 				$post = $this->input->post();
+				print_r($post);
 				$this->load->model('loginmodel');
 				if($this->loginmodel->add_article($post)){
 					$this->session->set_flashdata('msg', '<strong>Successfully !!!</strong> Article Added.');
@@ -109,7 +116,11 @@
                 }
 				return redirect('admin/welcome');// alert sms on dashboard..
 			}else{
-				$this->load->view('admin/add_article');
+				$upload_error = $this->upload->display_errors();
+				// echo "hitesh";
+				print_r($upload_error);
+				exit();
+				$this->load->view('admin/add_article', compact('upload_error')); 				
 			}
 		}//end of userValidation 
 
