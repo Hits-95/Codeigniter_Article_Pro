@@ -71,7 +71,6 @@
 
 		//update article
 		public function update_article($article_id){
-			echo "update";
 			if($this->form_validation->run('add_article_rules')){	
 				$new_article = $post = $this->input->post();
 				$this->load->model('loginmodel');
@@ -89,13 +88,15 @@
                 }
 				return redirect('admin/welcome');// alert sms on dashboard..
 			}else{
-				$this->load->view('admin/edit_article');
+				$this->load->view('admin/add_article');
 			}
 		}
+
+		//upload image into ./upload/ folder and insert into database.....
 		public function userValidation(){
 			$config=[
 				'upload_path'=>'./upload/',
-				'allowed_types'=>'gif|jpg|png',
+				'allowed_types'=>'gif|jpg|png|jpeg',
 			];
                
 			$this->load->library('upload',$config);

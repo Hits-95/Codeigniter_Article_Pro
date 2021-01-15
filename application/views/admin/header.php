@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <!-- Brand/logo -->
-  <a class="navbar-brand" href="#">Admin Panel<i class='far fa-user' style='font-size:24px; margin-left: 5px'></i></a>
+  <a class="navbar-brand" href="<?= base_url() ?>">Article List<i class='far fa-user' style='font-size:24px; margin-left: 5px'></i></a>
   
   <!-- Links -->
   <ul class="navbar-nav">
@@ -33,11 +33,7 @@
         ?>
             <a class="btn btn-danger btn-sm" href="<?= base_url('admin/logout')?>"><span style="margin-right: 5px">Logout</span><i class="fas fa-sign-out-alt"></i></a>
 
-        <?php }else{ ?>
-            <a class="btn btn-danger btn-sm" href="<?= base_url('login/')?>">Login<i class="fas fa-sign-in-alt" style="margin-right: 5px"></i></a>
-        <?php
-        }
-         ?>
+        <?php } ?>
     </li>
    <!--  <li class="nav-item">
       <a class="nav-link" href="#">Link 2</a>

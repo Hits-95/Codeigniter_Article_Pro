@@ -12,7 +12,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="javascript:void(0)">Article List</a>
+  <a class="navbar-brand" href="<?= base_url() ?>">Article List</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,6 +23,9 @@
       </li>
       <li class="nav-item active">
         <a class="btn btn-light text-dark" href="<?= base_url('export'); ?>">FeedBack!!!</a>
+      </li>
+       <li class="nav-item active">
+        <a class="btn " href="<?= base_url()?>login/">Admin login</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
