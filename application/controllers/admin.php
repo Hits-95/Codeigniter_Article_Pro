@@ -92,37 +92,38 @@
 				$this->load->view('admin/edit_article');
 			}
 		}
-
-		//check article is valid or not via config validation new tech-2
 		public function userValidation(){
 			$config=[
 				'upload_path'=>'./upload/',
 				'allowed_types'=>'gif|jpg|png',
 			];
-            //load library to upload image...
-			$this->load->library('upload',$config); 
-			if($this->form_validation->run('add_article_rules') && $this->upload->do_upload() ){	
-				//get all data from add_article.php as post in form of array tech-2
-				$post = $this->input->post();
-				print_r($post);
-				$this->load->model('loginmodel');
-				if($this->loginmodel->add_article($post)){
-					$this->session->set_flashdata('msg', '<strong>Successfully !!!</strong> Article Added.');
+               
+			$this->load->library('upload',$config);
+  			if($this->form_validation->run('add_article_rules') && $this->upload->do_upload()){
+     			$post=$this->input->post(); 
+     
+     			$data=$this->upload->data();
+
+				$image_path=base_url("upload/".$data['raw_name'].$data['file_ext']);
+     			echo $image_path;
+       			$post['image_path']=$image_path;
+      			$this->load->model('loginmodel','useradd');
+
+     			if($this->useradd->add_article($post)){
+         			$this->session->set_flashdata('msg', '<strong>Successfully !!!</strong> Article Added.');
 					$this->session->set_flashdata('msg_class', 'alert alert-success');
-				}
-                else{
-					$this->session->set_flashdata('msg', '<strong>Article Not Added !!!</strong> Plase Try Again...');
+      			} else { 
+			       $this->session->set_flashdata('msg', '<strong>Article Not Added !!!</strong> Plase Try Again...');
 					$this->session->set_flashdata('msg_class', 'alert alert-danger');
-                }
-				return redirect('admin/welcome');// alert sms on dashboard..
-			}else{
-				$upload_error = $this->upload->display_errors();
-				// echo "hitesh";
-				print_r($upload_error);
-				exit();
-				$this->load->view('admin/add_article', compact('upload_error')); 				
-			}
-		}//end of userValidation 
+      			}
+      			return redirect('admin/welcome');
+			} else {
+ 				$upload_error=$this->upload->display_errors();
+ 				// echo $upload_error;
+  				$this->load->view('admin/add_article',compact('upload_error'));
+  			}
+
+ 		}
 
 		//log out function
        	public function logout() {

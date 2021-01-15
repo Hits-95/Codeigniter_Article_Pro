@@ -49,20 +49,17 @@
 				<div class="form-group">
 		    		<label for="Username">Select Image:</label><br>
 		     		<?php 
-			     		if($action == 'update_article'){
-			     			echo form_upload(['name' => 'userfile']);
-			     		}else{
-			     			echo form_upload(['name' => 'userfile']);
-			       		}
+		     			echo form_upload(['name' => 'userfile']);
+			     		// if($action == 'update_article'){
+			     		// 	echo form_upload(['name' => 'userfile']);
+			     		// }else{
+			     		// 	echo form_upload(['name' => 'userfile']);
+			       // 		}
 			     	?>
 		     	</div>
 			</div>
 			<div class="col-lg-6" style=" margin-top:40px;">
-				<?php 
-					if(isset($upload_error)){
-						echo $upload_error;
-				  	} 
-				?>
+				<?php if(isset($upload_error)) { echo $upload_error;  }  ?>
 			</div>
 		</div>
 		<!-- end of row -->
