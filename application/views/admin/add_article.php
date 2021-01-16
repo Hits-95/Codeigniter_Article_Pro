@@ -8,6 +8,7 @@
 	<?= form_open_multipart($action == 'update_article' ? "admin/update_article/{$article->id}" :  "admin/userValidation");?>
 
 	<?php echo form_hidden('user_id', $this->session->userdata('id'));?>
+	<?php echo form_hidden('create_at', date('Y-M-d H:i:s'));?>
 		<div class="row" style="margin-top: 20px">
 			<div class="col-lg-6">
 				<div class="form-group">

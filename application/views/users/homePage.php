@@ -9,8 +9,7 @@
 			        <th>Article Image</th>
 			        <th>Article Title</th>
 			        <th>Article Body</th>
-			        <th> Date</th>
-     			</tr>
+			        <th> Publish On</th>
    			</thead>
 	   		<tbody>
 	   			<?php
@@ -29,9 +28,9 @@
 						        		}
 						        	?>
 						        </td>
-						        <td class = "font-weight-bold"><?=$art->article_title ?></td>
+						        <td class = "font-weight-bold text-primary"><?=$art->article_title ?></td>
 						        <td class = "font-italic"><?=$art->article_body?></td>
-						        <td> Date</td>
+						        <td class = "text-center"><h6> <?= $art->create_at?> </h6></td>
 			        		</tr>
 	   			<?php
 	   					endforeach;

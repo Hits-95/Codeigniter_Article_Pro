@@ -101,14 +101,18 @@
                
 			$this->load->library('upload',$config);
   			if($this->form_validation->run('add_article_rules') && $this->upload->do_upload()){
-     			$post=$this->input->post(); 
-     
+     			
+     			$post = $this->input->post(); 
+					
      			$data=$this->upload->data();
 
-				$image_path=base_url("upload/".$data['raw_name'].$data['file_ext']);
-     			echo $image_path;
+				$image_path = base_url("upload/".$data['raw_name'].$data['file_ext']);
+     			//echo $image_path;
        			$post['image_path']=$image_path;
       			$this->load->model('loginmodel','useradd');
+
+     //  			print_r($post);
+					// exit();     
 
      			if($this->useradd->add_article($post)){
          			$this->session->set_flashdata('msg', '<strong>Successfully !!!</strong> Article Added.');
