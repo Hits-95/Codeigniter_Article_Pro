@@ -11,7 +11,7 @@
 			$this->load->library('pagination');
 
 			$config = [
-				'base_url'       => base_url('admin/welcome'),
+				'base_url'       => base_url('users/index'),
 				'per_page'       => 2,
 				'total_rows'     => $this->loginmodel->all_article_count(),
 
@@ -30,8 +30,16 @@
         		'last_tag_open' => "<li class = 'page-item page-link'>",
         		'last_tag_close' =>"</li>",
     		];
- 
-			$this->load->view('users/homePage');
+
+    		$this->pagination->initialize($config);    		
+			$articles = $this->loginmodel->all_article_list($config['per_page'], $this->uri->segment(3));
+
+
+			// print_r(compact('articles'));
+			// or
+			// $articles['articles'] = $this->loginmodel->all_article_list($config['per_page'], $this->uri->segment(3));
+			
+			$this->load->view('users/homePage', compact('articles'));
 		}
 		//register new user function
 		public function register() {

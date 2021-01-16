@@ -64,5 +64,26 @@
 		public function add_user($array) {
 			return $this->db->insert('users', $array);
 		}
+
+		/*
+		*** for all articles display on home page return number of rows...
+		*/
+
+		public function all_article_count(){
+			$result = $this->db->select()
+					 ->from('articles')		
+					 ->get();
+			return $result->num_rows();
+		}
+
+		public function all_article_list($limit, $offset){
+			$result = $this->db->select()
+					  ->from('articles')
+					  ->limit($limit, $offset)
+					  ->get();
+					  // print_r($result->result());
+			return $result->result();
+
+		}
 	}
 ?>

@@ -16,7 +16,7 @@
 
 			$config = [
 				'base_url'       => base_url('admin/welcome'),
-				'per_page'       => 4,
+				'per_page'       => 3,
 				'total_rows'     => $this->loginmodel->num_rows(),
 
 				'full_tag_open'  => "<ul class='pagination'>",
