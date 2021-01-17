@@ -130,6 +130,14 @@
 
  		}
 
+ 		//display card...
+ 		public function display_card_article($article_id){
+ 			$this->load->model("loginmodel");
+ 			$article = $this->loginmodel->find_article($article_id);
+ 			// print_r($article);
+
+ 			$this->load->view("users/display_card_article", ['article' => $article]);
+ 		}
 		//log out function
        	public function logout() {
        		$this->session->unset_userdata('id');

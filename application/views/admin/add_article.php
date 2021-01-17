@@ -1,6 +1,6 @@
  <?php include('header.php'); 
  	$action = $this->session->userdata('action');
- 	//print_r($article);
+ 	// print_r($article);
  ?>
 <div class="container">
 		<h2 style="margin-top: 20px;"><?= ($action == 'update_article') ? "Edit " : "Add " ?>Article</h2>

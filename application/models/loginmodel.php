@@ -39,7 +39,7 @@
 		****for update article 
 		*/
 		public function find_article($article_id) {
-			$result = $this->db->select(['article_title', 'article_body', 'id'])
+			$result = $this->db->select()
 					 ->where('id', $article_id)
 					 ->get('articles');
 			return $result->row();
@@ -49,6 +49,7 @@
 			return $this->db->where('id', $article_id)
 							->update('articles', $new_article);
 		}
+
 		//add Article 
 		public function add_article($array) {
 			return $this->db->insert('articles', $array);
@@ -64,6 +65,7 @@
 		public function add_user($array) {
 			return $this->db->insert('users', $array);
 		}
+
 
 		/*
 		*** for all articles display on home page return number of rows...
