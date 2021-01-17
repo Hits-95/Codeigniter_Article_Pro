@@ -28,9 +28,9 @@
 						        		}
 						        	?>
 						        </td>
-						        <td class = "font-weight-bold text-primary"><?=$art->article_title ?></td>
+						        <td class = "font-weight-bold text-primary"><?= anchor("admin/{}$art->id",$art->article_title) ?></td>
 						        <td class = "font-italic"><?=$art->article_body?></td>
-						        <td class = "text-center"><h6> <?= $art->create_at?> </h6></td>
+						        <td class = "text-center"><h6> <?= date("d M y H:i:s" ,strtotime($art->create_at)) ?> </h6></td>
 			        		</tr>
 	   			<?php
 	   					endforeach;
@@ -38,8 +38,12 @@
 	   			 ?>
 	    	</tbody>
   		</table>
+  		<div class="row">
+			<div class="col-lg-5"></div>
+			<?= $this->pagination->create_links(); ?>
+		</div>
 	</div>
 </body>
 
-<?= $this->pagination->create_links()?> 
+
 <?php include('footer.php')?>

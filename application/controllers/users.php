@@ -7,6 +7,10 @@
 		}
 
 		public function index() {
+			log_message('error', "error methods in line");
+			log_message('debug', "debugging code...");
+			log_message('info', "users/index method called ...");
+
 			$this->load->model('loginmodel');
 			$this->load->library('pagination');
 
