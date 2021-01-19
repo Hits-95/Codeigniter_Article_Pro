@@ -1,9 +1,8 @@
 <?php include('header.php')?>
 <!-- <?php print_r($article) ?> -->
 
-<div class="container">
-	<h2>Article </h2>
-  	<br>
+<div class="container" style="margin-top: 10px">
+	<h1>Article </h1>
   	<div class="card" style="width:1000px">
     	<img class="card-img-top text-italic" src="<?=$article->image_path?>" alt="Card image" style="width:100%">
     	<div class="card-body">

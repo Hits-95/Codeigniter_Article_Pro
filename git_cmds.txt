@@ -1,0 +1,43 @@
+git config --global user.email "hbahire2014@gmail.com"
+git config --global user.name "Ahire Hitesh"
+git init
+git add -A
+git commit [-a]-m "first commit" ... -a for all files commit 
+git remote add origin https://github.com/Hits-95/c.git
+git push origin master
+
+after update use 
+Status
+1) git add -A
+2) git commit -m ""
+3)git push
+********************************
+download project 
+1)git clone reponame url
+-----  adding sm new data in origin . and we want to access new update 
+2) git pull origin master
+******************************************
+git branching....
+1) git branch (shows branches)
+2) git branch b1 (create branch)
+3) git checkout b1 (switch branch from master to b1)
+++ after working on b1 checkout to master for save data and add new uptades in master
+4)git merge b1 
+
+** add branch to repositry **
+git push -u origin work
+
+****************************
+git log -p - [no of changes] show last changes
+git ****************************************
+git diff  (show new add or edite data in file)
+
+after save changes (git add -A) you want to access privious data use this
+git diff --staged (compare with privious commit)
+git checkout -f (replace with previous commit)
+*****************************************
+remove file 
+1) form git but not in hard dist 
+git rm --cached filename
+2) remove file from all derecrty 
+git rm filename
